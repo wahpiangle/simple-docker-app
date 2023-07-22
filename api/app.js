@@ -18,10 +18,14 @@ app.get('/', (req, res) => {
         {
             "id": "3",
             "title": "Show Review: Alice in Borderland"
+        },
+        {
+            "id": "4",
+            "title": "Book Review: The Bear & The Nightingale"
         }
     ])
 })
 
 app.listen(4000, () => {
-    console.log('listening for requests on port 4000')
+    console.log('listening for requests on port 4000..')
 })

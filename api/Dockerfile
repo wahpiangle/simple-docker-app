@@ -1,6 +1,8 @@
 #parent image
 FROM node:18.15.0-alpine
 
+RUN npm install -g nodemon
+
 # this command specifies that the commands will be done from this directory
 WORKDIR /app
 
@@ -18,4 +20,4 @@ COPY . .
 EXPOSE 4000
 
 # use of CMD as opposed to RUN is that CMD is executed when the container is run not when it is being built
-CMD [ "node", "app.js" ]
+CMD [ "npm", "run", "dev" ]
