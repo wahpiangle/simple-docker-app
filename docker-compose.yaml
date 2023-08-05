@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  api:
+    build: ./api #relative path to Dockerfile
+    container_name: api_c
+    ports:
+      - '4000:4000'
+    volumes:
+      - './api:/app' #this creates a volume that syncs the local folder with the container folder
+      - '/app/node_modules' #this is to avoid overwriting the node_modules folder
