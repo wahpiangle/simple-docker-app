@@ -8,3 +8,13 @@ services:
     volumes:
       - './api:/app' #this creates a volume that syncs the local folder with the container folder
       - '/app/node_modules' #this is to avoid overwriting the node_modules folder
+  myblog:
+    build: ./myblog
+    container_name: myblog_c
+    ports:
+      - '3000:3000'
+    stdin_open: true #for react apps
+    tty: true #for react apps
+    volumes:
+      - './myblog:/app'
+      - '/app/node_modules'
